@@ -32,9 +32,10 @@ def testMetodoCantidadAsientos():
 
 def testMetodoVerificarIntegridad():
     a1 = Auto("model 3", 33000, [Asiento("blanco", 5000, 32), None, None, Asiento("blanco", 5000, 32), None],
-              Motor(4, "electrico"), 32)
+              Motor(32, "electrico"), 32)  # Ajustar registro del motor
     a2 = Auto("model 3", 33000, [Asiento("blanco", 5000, 40), None, None, Asiento("blanco", 5000, 32), None],
-              Motor(4, "electrico"), 32)
-    
+              Motor(32, "electrico"), 32)  # El motor tiene el registro correcto, pero un asiento no
+
     assert a1.verificarIntegridad() == "Auto original"
     assert a2.verificarIntegridad() == "Las piezas no son originales"
+
